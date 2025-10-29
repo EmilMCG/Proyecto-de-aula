@@ -1,0 +1,153 @@
+:root{
+  --primary: #3B82F6;
+  --secondary: #F59E0B;
+  --bg: #f8fafc; /* gray-50 */
+  --card: #ffffff;
+  --muted: #6b7280; /* gray-600 */
+  --text: #111827; /* gray-900 */
+  --border: #e5e7eb; /* gray-200 */
+  --dark-bg: #111827;
+  --shadow: 0 6px 18px rgba(16,24,40,0.06);
+  --radius: 12px;
+  --radius-sm:8px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset and container */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Dark mode */
+body.dark{background:#0b1220;color:#e6eef8}
+body.dark .site-header {background:#0b1220;border-color:#172033}
+body.dark .site-footer{background:#02040a}
+body.dark .card{background:#0f1724;color:#e6eef8}
+body.dark .muted{color:#94a3b8}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:60}
+.header-inner{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:14px 0}
+.left{display:flex;align-items:center;gap:24px}
+.logo{font-family:"Pacifico",sans-serif;font-size:24px;color:var(--primary)}
+.main-nav{display:flex;gap:18px}
+.main-nav a{color:var(--muted);text-decoration:none;font-size:15px}
+.main-nav a:hover{color:var(--primary)}
+.center{flex:1;display:flex;justify-content:center}
+.right{display:flex;align-items:center;gap:12px}
+
+/* Search */
+.search-wrap{position:relative;width:100%;max-width:520px}
+.search-input{width:100%;padding:10px 14px 10px 40px;border:1px solid var(--border);border-radius:10px;background:white;color:inherit}
+.search-input:focus{outline:2px solid rgba(59,130,246,0.12);box-shadow:0 0 0 4px rgba(59,130,246,0.06)}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#9ca3af}
+
+/* Icon buttons & badge */
+.icon-btn{background:transparent;border:0;padding:8px;border-radius:8px;cursor:pointer;color:var(--muted);font-size:18px}
+.icon-btn:hover{color:var(--primary)}
+.badge{position:absolute;top:-6px;right:-6px;background:var(--secondary);color:white;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+
+/* Hero */
+.hero{position:relative;padding:64px 0 96px;background-image:url('https://readdy.ai/api/search-image?query=modern%20stationery%20store%20interior&width=1200&height=600');background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.6));}
+.hero-inner{position:relative;display:flex;align-items:center;min-height:320px}
+.hero-text{max-width:700px}
+.hero h1{font-size:44px;margin:0 0 12px}
+.hero p{font-size:18px;color:var(--muted);margin:0 0 18px}
+.hero-ctas{display:flex;gap:12px}
+.btn{padding:10px 18px;border-radius:8px;border:1px solid transparent;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--primary);color:white}
+.btn.primary:hover{background:#2563eb}
+.btn.outline{background:white;border-color:var(--primary);color:var(--primary)}
+.btn.small{padding:8px 12px;font-size:14px}
+
+/* Sections */
+.section{padding:56px 0}
+.section.light{background:var(--bg)}
+.section-title{text-align:center;font-size:28px;margin-bottom:18px;color:var(--text)}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+
+/* Grid utilities */
+.grid{display:grid;gap:18px}
+.categories-grid{grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.categories-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1024px){.categories-grid{grid-template-columns:repeat(5,1fr)}}
+
+/* Card */
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card.category{padding:18px;text-align:center}
+.card.category img{width:64px;height:64px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+.card h3{margin:8px 0 4px;font-size:16px}
+.muted{color:var(--muted);font-size:14px}
+.badge-pill{position:absolute;top:10px;left:10px;background:var(--secondary);color:#fff;padding:6px 8px;border-radius:8px;font-weight:600;font-size:12px}
+.badge-pill.green{background:#10b981}
+
+/* Products grid */
+.products-grid{grid-template-columns:repeat(1,1fr)}
+@media(min-width:640px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.products-grid{grid-template-columns:repeat(4,1fr)}}
+.product .card-media{position:relative;height:190px;overflow:hidden}
+.product img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:14px}
+.rating-row{display:flex;align-items:center;gap:8px;margin:8px 0}
+.stars i{color:#fbbf24} /* yellow-400 */
+.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.price .strike{text-decoration:line-through;color:#9ca3af;margin-right:8px}
+.price-current{color:var(--primary);font-weight:700}
+
+/* list view */
+.list-view .list-item{display:flex;gap:18px;align-items:center;padding:16px;border-radius:10px;background:var(--card);box-shadow:var(--shadow)}
+.list-item img{width:96px;height:96px;object-fit:cover;border-radius:10px}
+.list-body{flex:1}
+
+/* pagination */
+.pagination{display:flex;gap:8px;justify-content:center;margin-top:28px}
+.page-btn{padding:8px 10px;border-radius:8px;border:1px solid var(--border);background:white;cursor:pointer}
+.page-btn.active{background:var(--primary);color:white;border-color:transparent}
+.dots{align-self:center;color:var(--muted)}
+
+/* Info grid */
+.info-grid{display:grid;gap:20px}
+@media(min-width:1024px){.info-grid{grid-template-columns:1fr 420px}}
+.features{display:flex;flex-direction:column;gap:14px}
+.feature{display:flex;gap:12px;align-items:flex-start}
+.icon-box{width:40px;height:40px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff}
+
+/* Visit card */
+.visit-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+.map-placeholder{height:180px;border-radius:8px;background:url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png') center/cover}
+
+/* Modal (cart) */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999}
+.modal .modal-card{background:var(--card);width:100%;max-width:820px;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:18px;border-bottom:1px solid var(--border)}
+.modal-body{padding:18px;max-height:420px;overflow:auto}
+.cart-item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;border:1px solid var(--border);margin-bottom:10px}
+.cart-item img{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.cart-qty{display:flex;align-items:center;gap:8px}
+.qty-btn{background:transparent;border:1px solid var(--border);padding:6px;border-radius:8px;cursor:pointer}
+
+/* Modal footer */
+.modal-footer{padding:18px;border-top:1px solid var(--border);background:var(--bg)}
+.total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:700}
+
+/* Footer */
+.site-footer{background:#111827;color:#fff;padding:40px 0}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:repeat(4,1fr)}}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid rgba(255,255,255,0.04)}
+.socials a{display:inline-flex;width:36px;height:36px;border-radius:8px;align-items:center;justify-content:center;background:#0b1220;margin-right:8px;color:#fff}
+.muted-list li{margin-bottom:8px}
+
+/* Toast */
+.toast{position:fixed;top:18px;right:18px;background:#10b981;color:white;padding:14px;border-radius:12px;box-shadow:var(--shadow);z-index:9999;transform:translateX(120%);opacity:0;transition:all .35s}
+.toast.show{transform:translateX(0);opacity:1}
+.toast-inner{display:flex;gap:12px;align-items:center}
+.toast-icon{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center}
+
+/* small helpers */
+.hidden{display:none !important}
+.small{font-size:13px}
+.large{font-size:20px}
+.active{box-shadow:0 4px 12px rgba(59,130,246,0.12)}

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PapelMax - Tu Papelería de Confianza</title>
+
+  <!-- Google Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+  <!-- CSS local -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Readdy script (se manteniene porque venía en tu original) -->
+  <script src="https://static.readdy.ai/static/e.js" defer></script>
+</head>
+<body>
+  <!-- Header/Navegación Principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="left">
+        <div class="logo">PapelMax</div>
+        <nav class="main-nav">
+          <a href="#">Útiles Escolares</a>
+          <a href="#">Oficina</a>
+          <a href="#">Arte y Manualidades</a>
+          <a href="#">Impresión</a>
+          <a href="#">Mochilas</a>
+        </nav>
+      </div>
+
+      <div class="center">
+        <div class="search-wrap">
+          <input type="text" placeholder="Buscar productos..." class="search-input">
+          <div class="search-icon"><i class="ri-search-line"></i></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="contact">
+          <div>Lun - Vie: 8:00 - 18:00</div>
+          <div>Tel: (555) 123-4567</div>
+        </div>
+
+        <button id="themeToggle" class="icon-btn" title="Cambiar tema">
+          <i id="themeIcon" class="ri-sun-line"></i>
+        </button>
+
+        <button class="icon-btn cart-btn" title="Ver carrito">
+          <i class="ri-shopping-cart-line"></i>
+          <span id="cartCounter" class="badge">3</span>
+        </button>
+
+        <a href="https://readdy.ai/home/7382337f-7f01-424f-94e3-f00b4b59834f/376dadcb-e843-420e-a659-5f8803e78b18" data-readdy="true" class="icon-btn">
+          <i class="ri-user-line"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner Principal/Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Todo lo que necesitas para estudiar y trabajar</h1>
+        <p>Encuentra los mejores productos de papelería, útiles escolares y suministros de oficina con la mejor calidad y precios competitivos.</p>
+        <div class="hero-ctas">
+          <button class="btn primary">Ver Catálogo</button>
+          <button class="btn outline">Ofertas Especiales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Nuestras Categorías</h2>
+      <div class="grid categories-grid">
+        <div class="card category">
+          <img src="https://readdy.ai/api/search-image?query=variety%20of%20pencils&width=200&height=200" alt="Lápices">
+          <h3>Lápices</h3>
+          <p class="muted">156 productos</p>
+        </div>
+        <div class="card category">
+          <img src="https://readdy.ai/api/search-image?query=backpacks&width=200&height=200" alt="Mochilas">
+          <h3>Mochilas</h3>
+          <p class="muted">67 productos</p>
+        </div>
+        <div class="card category">
+          <img src="https://readdy.ai/api/search-image?query=notebooks&width=200&height=200" alt="Cuadernos">
+          <h3>Cuadernos</h3>
+          <p class="muted">124 productos</p>
+        </div>
+        <div class="card category">
+          <img src="https://readdy.ai/api/search-image?query=markers&width=200&height=200" alt="Marcadores">
+          <h3>Marcadores</h3>
+          <p class="muted">89 productos</p>
+        </div>
+        <div class="card category">
+          <img src="https://readdy.ai/api/search-image?query=office%20supplies&width=200&height=200" alt="Oficina">
+          <h3>Oficina</h3>
+          <p class="muted">203 productos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Destacados -->
+  <section class="section light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Productos Destacados</h2>
+        <div class="filters-row">
+          <button class="btn small primary">Más Vendidos</button>
+          <button class="btn small">Nuevos</button>
+          <button class="btn small">Ofertas</button>
+        </div>
+      </div>
+
+      <div id="productsGrid" class="grid products-grid">
+        <!-- Producto 1 -->
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=spiral%20notebook&width=300&height=300" alt="Cuaderno">
+            <span class="badge-pill">-20%</span>
+          </div>
+          <div class="card-body">
+            <h3>Cuaderno Espiral Universitario</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">(24)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="muted strike">$22.900</span>
+                <span class="price-current">$18.320</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=ballpoint%20pens&width=300&height=300" alt="Bolígrafos">
+            <span class="badge-pill green">Nuevo</span>
+          </div>
+          <div class="card-body">
+            <h3>Set de Bolígrafos Premium</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <span class="muted">(18)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="price-current">$33.150</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=watercolor%20set&width=300&height=300" alt="Acuarelas">
+          </div>
+          <div class="card-body">
+            <h3>Set de Acuarelas Profesional</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">(31)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="price-current">$63.750</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=backpack&width=300&height=300" alt="Mochila">
+            <span class="badge-pill">-15%</span>
+          </div>
+          <div class="card-body">
+            <h3>Mochila Escolar Ergonómica</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">(42)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="muted strike">$117.300</span>
+                <span class="price-current">$99.705</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional products (the parts you sent) -->
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=highlighter%20set&width=300&height=300" alt="Resaltadores">
+            <span class="badge-pill">-10%</span>
+          </div>
+          <div class="card-body">
+            <h3>Set de Resaltadores</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">(27)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="muted strike">$28.500</span>
+                <span class="price-current">$25.650</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=ruler%20geometry%20set&width=300&height=300" alt="Regla">
+          </div>
+          <div class="card-body">
+            <h3>Regla de Geometría</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <span class="muted">(12)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="price-current">$15.250</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=student%20backpack%20sports&width=300&height=300" alt="Mochila Deportiva">
+          </div>
+          <div class="card-body">
+            <h3>Mochila Deportiva</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">(8)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="price-current">$85.990</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=folder%20binder&width=300&height=300" alt="Carpeta">
+          </div>
+          <div class="card-body">
+            <h3>Carpeta Archivadora</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">(19)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="price-current">$12.750</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card product">
+          <div class="card-media">
+            <img src="https://readdy.ai/api/search-image?query=scissors&width=300&height=300" alt="Tijeras">
+          </div>
+          <div class="card-body">
+            <h3>Tijeras Escolares</h3>
+            <div class="rating-row">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <span class="muted">(33)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price">
+                <span class="price-current">$9.850</span>
+              </div>
+              <button class="btn primary btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Search results hidden until used -->
+  <section id="searchResults" class="section hidden">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Resultados de Búsqueda</h2>
+          <p class="muted">Se encontraron 24 productos</p>
+        </div>
+        <div class="view-controls">
+          <div class="view-toggle">
+            <button id="gridView" class="icon-square active" title="Vista cuadrícula"><i class="ri-grid-line"></i></button>
+            <button id="listView" class="icon-square" title="Vista lista"><i class="ri-list-check"></i></button>
+          </div>
+
+          <div class="sort-wrap">
+            <button id="sortDropdown" class="sort-btn">Más relevantes <i class="ri-arrow-down-s-line"></i></button>
+            <div id="sortMenu" class="dropdown hidden">
+              <button data-sort="relevance">Más relevantes</button>
+              <button data-sort="price-low">Precio: menor a mayor</button>
+              <button data-sort="price-high">Precio: mayor a menor</button>
+              <button data-sort="popular">Más populares</button>
+              <button data-sort="newest">Más recientes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid shown by default -->
+      <div id="productsGrid" class="grid products-grid"></div>
+
+      <!-- List (hidden by default) -->
+      <div id="productsList" class="list-view hidden">
+        <div class="list-item">
+          <img src="https://readdy.ai/api/search-image?query=spiral%20notebook&width=120&height=120" alt="Cuaderno">
+          <div class="list-body">
+            <h3>Cuaderno Espiral Universitario</h3>
+            <div class="rating-row small">
+              <div class="stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+              </div>
+              <span class="muted">24 reseñas</span>
+            </div>
+            <p class="muted">Cuaderno espiral de 100 hojas con tapa dura...</p>
+            <div class="list-footer">
+              <div class="price">
+                <span class="muted strike">$22.900</span>
+                <span class="price-current large">$18.320</span>
+                <span class="badge-pill">-20%</span>
+              </div>
+              <button class="btn primary">Agregar al Carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pagination -->
+      <div class="pagination">
+        <button class="page-btn"><i class="ri-arrow-left-s-line"></i></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <span class="dots">...</span>
+        <button class="page-btn">8</button>
+        <button class="page-btn"><i class="ri-arrow-right-s-line"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Información del Negocio -->
+  <section class="section light">
+    <div class="container">
+      <div class="grid info-grid">
+        <div>
+          <h2>¿Por qué elegir PapelMax?</h2>
+          <div class="features">
+            <div class="feature">
+              <div class="icon-box"><i class="ri-check-line"></i></div>
+              <div>
+                <h3>Calidad Garantizada</h3>
+                <p class="muted">Trabajamos solo con las mejores marcas...</p>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="icon-box"><i class="ri-truck-line"></i></div>
+              <div>
+                <h3>Entrega Rápida</h3>
+                <p class="muted">Entregamos en 24-48 horas...</p>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="icon-box"><i class="ri-price-tag-3-line"></i></div>
+              <div>
+                <h3>Mejores Precios</h3>
+                <p class="muted">Ofrecemos precios competitivos...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visit-card">
+          <h3>Visítanos</h3>
+          <div class="contact-list">
+            <div><i class="ri-map-pin-line"></i> Av. Principal 123, Centro, Ciudad</div>
+            <div><i class="ri-phone-line"></i> (555) 123-4567</div>
+            <div><i class="ri-time-line"></i> Lun - Vie: 8:00 - 18:00, Sáb: 9:00 - 15:00</div>
+          </div>
+          <div class="map-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-inner">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Carrito de Compras</h3>
+          <button id="closeCart" class="icon-btn"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="cart-items">
+            <div class="cart-item">
+              <img src="https://readdy.ai/api/search-image?query=spiral%20notebook&width=80&height=80" alt="Producto">
+              <div class="cart-item-body">
+                <h4>Cuaderno Espiral Universitario</h4>
+                <p class="price-current">$18.320</p>
+              </div>
+              <div class="cart-qty">
+                <button class="qty-btn"><i class="ri-subtract-line"></i></button>
+                <span class="qty">2</span>
+                <button class="qty-btn"><i class="ri-add-line"></i></button>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <img src="https://readdy.ai/api/search-image?query=ballpoint%20pens&width=80&height=80" alt="Producto">
+              <div class="cart-item-body">
+                <h4>Set de Bolígrafos Premium</h4>
+                <p class="price-current">$33.150</p>
+              </div>
+              <div class="cart-qty">
+                <button class="qty-btn"><i class="ri-subtract-line"></i></button>
+                <span class="qty">1</span>
+                <button class="qty-btn"><i class="ri-add-line"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="total-row">
+            <span>Total:</span>
+            <span class="total-amount">$69.790</span>
+          </div>
+          <div class="modal-actions">
+            <button class="btn primary">Proceder al Pago</button>
+            <button id="continueShopping" class="btn">Continuar Comprando</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo small">PapelMax</div>
+        <p class="muted">Tu papelería de confianza con los mejores productos para estudiar y trabajar.</p>
+        <div class="socials">
+          <a class="social"><i class="ri-facebook-fill"></i></a>
+          <a class="social"><i class="ri-instagram-line"></i></a>
+          <a class="social"><i class="ri-twitter-line"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Productos</h4>
+        <ul class="muted-list">
+          <li>Útiles Escolares</li>
+          <li>Material de Oficina</li>
+          <li>Arte y Manualidades</li>
+          <li>Mochilas y Estuches</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Servicios</h4>
+        <ul class="muted-list">
+          <li>Entrega a Domicilio</li>
+          <li>Impresión y Copiado</li>
+          <li>Descuentos Corporativos</li>
+          <li>Soporte al Cliente</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <div class="muted-list">
+          <p>Av. Principal 123, Centro</p>
+          <p>(555) 123-4567</p>
+          <p>info@papelmax.com</p>
+          <p>Lun - Vie: 8:00 - 18:00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="muted">© 2024 PapelMax. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a class="muted">Política de Privacidad</a>
+        <a class="muted">Términos de Servicio</a>
+        <a class="muted">Devoluciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast hidden">
+    <div class="toast-inner">
+      <div class="toast-icon"><i class="ri-check-line"></i></div>
+      <div>
+        <p class="toast-title">¡Producto agregado!</p>
+        <p class="muted small">Se agregó al carrito exitosamente</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+
+  <!-- Posthog & readdy share (mantengo tu snippet final) -->
+  <script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = '_8dBWu_1SiwM2U1ZmP7xjA';
+    window.host = 'readdy.ai';
+  </script>
+  <script src="https://static.readdy.ai/static/share.js" defer></script>
+</body>
+</html>
